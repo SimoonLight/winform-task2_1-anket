@@ -38,7 +38,7 @@
             anket_grpbx.Size = new Size(421, 380);
             anket_grpbx.TabIndex = 0;
             anket_grpbx.TabStop = false;
-            anket_grpbx.Text = "ANKET";
+            anket_grpbx.Text = "ANKETT";
             // 
             // Form1
             // 
