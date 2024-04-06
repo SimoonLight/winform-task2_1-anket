@@ -6,5 +6,7 @@ namespace winform_task2_1_anket
         {
             InitializeComponent();
         }
+
+        
     }
 }
