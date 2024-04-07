@@ -36,9 +36,9 @@
             ataadi_txtbx = new TextBox();
             ad_txtbx = new TextBox();
             soyad_txtbx = new TextBox();
-            radioButton3 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            diger_rb = new RadioButton();
+            qadin_rb = new RadioButton();
+            kisi_rb = new RadioButton();
             label9 = new Label();
             dateTimePicker1 = new DateTimePicker();
             label8 = new Label();
@@ -49,9 +49,10 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            save_lbl = new Label();
-            button1 = new Button();
+            load_btn = new Button();
             save_btn = new Button();
+            error_lbl = new Label();
+            textBox1 = new TextBox();
             anket_grpbx.SuspendLayout();
             SuspendLayout();
             // 
@@ -64,9 +65,9 @@
             anket_grpbx.Controls.Add(ataadi_txtbx);
             anket_grpbx.Controls.Add(ad_txtbx);
             anket_grpbx.Controls.Add(soyad_txtbx);
-            anket_grpbx.Controls.Add(radioButton3);
-            anket_grpbx.Controls.Add(radioButton2);
-            anket_grpbx.Controls.Add(radioButton1);
+            anket_grpbx.Controls.Add(diger_rb);
+            anket_grpbx.Controls.Add(qadin_rb);
+            anket_grpbx.Controls.Add(kisi_rb);
             anket_grpbx.Controls.Add(label9);
             anket_grpbx.Controls.Add(dateTimePicker1);
             anket_grpbx.Controls.Add(label8);
@@ -133,38 +134,38 @@
             soyad_txtbx.Size = new Size(250, 27);
             soyad_txtbx.TabIndex = 13;
             // 
-            // radioButton3
+            // diger_rb
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(314, 380);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(67, 24);
-            radioButton3.TabIndex = 12;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Diger";
-            radioButton3.UseVisualStyleBackColor = true;
+            diger_rb.AutoSize = true;
+            diger_rb.Location = new Point(314, 380);
+            diger_rb.Name = "diger_rb";
+            diger_rb.Size = new Size(67, 24);
+            diger_rb.TabIndex = 12;
+            diger_rb.TabStop = true;
+            diger_rb.Text = "Diger";
+            diger_rb.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // qadin_rb
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(224, 380);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(70, 24);
-            radioButton2.TabIndex = 11;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Qadin";
-            radioButton2.UseVisualStyleBackColor = true;
+            qadin_rb.AutoSize = true;
+            qadin_rb.Location = new Point(224, 380);
+            qadin_rb.Name = "qadin_rb";
+            qadin_rb.Size = new Size(70, 24);
+            qadin_rb.TabIndex = 11;
+            qadin_rb.TabStop = true;
+            qadin_rb.Text = "Qadin";
+            qadin_rb.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // kisi_rb
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(144, 380);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(53, 24);
-            radioButton1.TabIndex = 10;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Kisi";
-            radioButton1.UseVisualStyleBackColor = true;
+            kisi_rb.AutoSize = true;
+            kisi_rb.Location = new Point(144, 380);
+            kisi_rb.Name = "kisi_rb";
+            kisi_rb.Size = new Size(53, 24);
+            kisi_rb.TabIndex = 10;
+            kisi_rb.TabStop = true;
+            kisi_rb.Text = "Kisi";
+            kisi_rb.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -178,7 +179,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(142, 336);
+            dateTimePicker1.Location = new Point(131, 336);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 8;
@@ -263,25 +264,17 @@
             label1.TabIndex = 0;
             label1.Text = "Soyad";
             // 
-            // save_lbl
+            // load_btn
             // 
-            save_lbl.AutoSize = true;
-            save_lbl.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            save_lbl.Location = new Point(143, 16);
-            save_lbl.Name = "save_lbl";
-            save_lbl.Size = new Size(0, 25);
-            save_lbl.TabIndex = 20;
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(299, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 21;
-            button1.Text = "Load";
-            button1.TextImageRelation = TextImageRelation.ImageAboveText;
-            button1.UseVisualStyleBackColor = true;
+            load_btn.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            load_btn.Location = new Point(299, 9);
+            load_btn.Name = "load_btn";
+            load_btn.Size = new Size(94, 29);
+            load_btn.TabIndex = 21;
+            load_btn.Text = "Load";
+            load_btn.TextImageRelation = TextImageRelation.ImageAboveText;
+            load_btn.UseVisualStyleBackColor = true;
+            load_btn.Click += load_btn_Click;
             // 
             // save_btn
             // 
@@ -292,18 +285,40 @@
             save_btn.TabIndex = 22;
             save_btn.Text = "Save";
             save_btn.UseVisualStyleBackColor = true;
+            save_btn.Click += save_btn_Click;
+            // 
+            // error_lbl
+            // 
+            error_lbl.AutoSize = true;
+            error_lbl.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            error_lbl.ForeColor = Color.Red;
+            error_lbl.Location = new Point(12, 12);
+            error_lbl.Name = "error_lbl";
+            error_lbl.Size = new Size(0, 17);
+            error_lbl.TabIndex = 23;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(143, 11);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(125, 27);
+            textBox1.TabIndex = 24;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Silver;
             ClientSize = new Size(445, 520);
+            Controls.Add(textBox1);
+            Controls.Add(error_lbl);
             Controls.Add(save_btn);
-            Controls.Add(button1);
-            Controls.Add(save_lbl);
+            Controls.Add(load_btn);
             Controls.Add(anket_grpbx);
+            MaximizeBox = false;
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             anket_grpbx.ResumeLayout(false);
             anket_grpbx.PerformLayout();
             ResumeLayout(false);
@@ -322,10 +337,10 @@
         private Label label6;
         private Label label5;
         private Label label4;
-        private RadioButton radioButton1;
+        private RadioButton kisi_rb;
         private Label label9;
-        private RadioButton radioButton2;
-        private RadioButton radioButton3;
+        private RadioButton qadin_rb;
+        private RadioButton diger_rb;
         private TextBox nomre_txtbx;
         private TextBox seher_txtbx;
         private TextBox olke_txtbx;
@@ -333,8 +348,9 @@
         private TextBox ataadi_txtbx;
         private TextBox ad_txtbx;
         private TextBox soyad_txtbx;
-        private Label save_lbl;
-        private Button button1;
+        private Button load_btn;
         private Button save_btn;
+        private Label error_lbl;
+        private TextBox textBox1;
     }
 }
